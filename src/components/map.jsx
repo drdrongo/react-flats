@@ -7,10 +7,6 @@ import { Marker } from './marker';
 
 export class SimpleMap extends Component {
   static defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33
-    },
     zoom: 11
   };
 
@@ -20,12 +16,12 @@ export class SimpleMap extends Component {
       <div className="map-container" style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyD8xVBCP_3TVfNjYLz7QJAiagKH3PXVZwk' }}
-          defaultCenter={this.props.center}
+          defaultCenter={this.props.coords}
           defaultZoom={this.props.zoom}
         >
           <Marker
-            lat={59.955413}
-            lng={30.337844}
+            lat={this.props.coords.lat}
+            lng={this.props.coords.lng}
             text="My Marker"
           />
         </GoogleMapReact>
