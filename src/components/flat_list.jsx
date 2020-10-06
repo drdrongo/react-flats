@@ -5,7 +5,7 @@ import { Card } from './card';
 export class FlatList extends Component {
   renderList() {
     return this.props.flats.map(flat => {
-      return <Card flatData={flat} key={[flat.lat, flat.lng]} className="card" />
+      return <Card sendCoords={this.props.sendCoords} flatData={flat} key={[flat.lat, flat.lng]} className="card" />
     })
   }
 
